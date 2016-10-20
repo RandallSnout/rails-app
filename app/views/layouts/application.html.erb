@@ -7,6 +7,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+<div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <div id="nav-mobile" class="right hide-on-med-and-down">
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <p><%= e %></p>
+  <% end %>
+<% end %>
+<% if current_user %>
+  <form action='/sessions' method='post'>
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Log Out'>
+  </form>
+ <% else %>
+	 <div class="row">
+		 <div class="col 12s">
+			  <form action="/sessions/login" method="post">
+				  <div class="col 6s input-field white black-text">
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+					<input id="Email" type="text" name="email" placeholder="Email">
+				  </div>
+				  <div class="col 6s input-field white black-text">
+					<input id="Password" type="password" name="password" placeholder="Password">
+				  </div>
+				  <div class="col 6s">
+					<input type="submit" value="Log In">
+				  </div>
+			  </form>
+		  </div>
+	 </div>
+<% end %>
+</div>
+</div>
+</nav>
+
 <div class="container">
 <%= yield %>
 </div>
