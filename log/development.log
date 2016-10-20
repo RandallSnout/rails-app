@@ -11689,3 +11689,5 @@ Started GET "/assets/application.self-08e22355a8c9c7bb2b61907f48ac8ed25a2ce48201
 
 
 Started GET "/assets/roboto/Roboto-Regular-b5c9c23bd12593523a46d79dd0aee80e3226bbde4c9ac05fc30a95e2c1510de0.woff2" for ::1 at 2016-10-19 22:14:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
